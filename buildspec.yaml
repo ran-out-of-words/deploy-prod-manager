@@ -35,19 +35,18 @@ phases:
     runtime-versions:
       php: 8.3
     commands:
-      - chmod +x ./scripts/install_dependencies.sh
-      - sh ./scripts/install_dependencies.sh
+      - sudo apt update -y
+      - sudo apt install composer -y
       # - echo "hello"
     finally:
-      - echo "Installed system dependencies"
-  # build:
-  #   run-as: www-data
-  #   on-failure: ABORT
-  #   commands:
-  #     # - bash ./scripts/install_dependencies.sh
-  #     - echo "hello 2"
-  #   finally:
-  #     - echo "Installed composer dependencies"
+      - echo "Installed dependencies"
+  build:
+    run-as: www-data
+    on-failure: ABORT
+    commands:
+      - composer install
+    finally:
+      - echo "Installed composer dependencies"
 
 artifacts:
   files:
