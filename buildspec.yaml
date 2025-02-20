@@ -38,15 +38,13 @@ phases:
       - sudo apt update -y
       - sudo apt install composer -y
       # - echo "hello"
-    finally:
-      - echo "Installed dependencies"
+
   build:
     run-as: www-data
     on-failure: ABORT
     commands:
       - composer install
-    finally:
-      - echo "Installed composer dependencies"
+  
 
 artifacts:
   files:
