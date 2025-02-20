@@ -9,16 +9,16 @@ hooks:
     - location: scripts/hello.sh
       timeout: 5
       runas: root
-  BeforeInstall:
-    - location: scripts/hello.sh
-      timeout: 100
-      runas: root
-  AfterInstall:
-    - location: scripts/hello.sh
-      timeout: 100
-      runas: root
-  ApplicationStart:
-    - location: scripts/hello.sh
-      timeout: 5
-      runas: root
+  # BeforeInstall:
+  #   - location: scripts/hello.sh
+  #     timeout: 100
+  #     runas: root
+  # AfterInstall:
+  #   - location: scripts/hello.sh
+  #     timeout: 100
+  #     runas: root
+  # ApplicationStart:
+  #   - location: scripts/hello.sh
+  #     timeout: 5
+  #     runas: root
   
