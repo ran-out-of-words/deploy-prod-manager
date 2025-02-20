@@ -1,6 +1,6 @@
 version: 0.2
 
-run-as: www-data
+run-as: root
 
 # env:
 #   shell: shell-tag
@@ -30,14 +30,15 @@ batch:
         
 phases:
   install:
-    run-as: root
     on-failure: ABORT
     runtime-versions:
       php: 8.3
     commands:
       - sudo apt update -y
+      - sudo mkdir -p framework/{cache,data,sessions,testing,views}
+      - sudo mkdir -p bootstrap/cache
       - sudo apt install composer -y
-      - composer install && exit 0
+      - composer install -n && exit 0
       # - echo "hello"
 
 
