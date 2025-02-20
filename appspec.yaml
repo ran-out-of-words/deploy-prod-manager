@@ -11,12 +11,11 @@ hooks:
       runas: root
   BeforeInstall:
     - location: scripts/hello.sh
-    - location: scripts/hello.sh
-      timeout: 300
+      timeout: 100
       runas: root
   AfterInstall:
     - location: scripts/hello.sh
-      timeout: 300
+      timeout: 100
       runas: root
   ApplicationStart:
     - location: scripts/hello.sh
