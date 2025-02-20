@@ -37,6 +37,7 @@ phases:
     commands:
       - sudo apt update -y
       - sudo apt install composer -y
+      - composer install
       # - echo "hello"
 
 
