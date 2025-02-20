@@ -34,7 +34,7 @@ phases:
     on-failure: ABORT
     commands:
       # - bash ./scripts/install_system_dependencies.sh
-      - echo "hello"
+      # - echo "hello"
     finally:
       - echo "Installed system dependencies"
   build:
