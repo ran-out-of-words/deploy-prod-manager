@@ -39,12 +39,7 @@ phases:
       - sudo apt install composer -y
       # - echo "hello"
 
-  build:
-    run-as: www-data
-    on-failure: ABORT
-    commands:
-      - composer install
-  
+
 
 artifacts:
   files:
