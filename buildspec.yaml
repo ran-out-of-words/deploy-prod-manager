@@ -33,7 +33,7 @@ phases:
     run-as: root
     on-failure: ABORT
     commands:
-      # - bash ./scripts/install_system_dependencies.sh
+      - bash ./scripts/install_system_dependencies.sh
       # - echo "hello"
     finally:
       - echo "Installed system dependencies"
