@@ -32,19 +32,21 @@ phases:
   install:
     run-as: root
     on-failure: ABORT
+    runtime-versions:
+      php: 8.3
     commands:
-      - bash ./scripts/install_system_dependencies.sh
+      - bash ./scripts/install_dependencies.sh
       # - echo "hello"
     finally:
       - echo "Installed system dependencies"
-  build:
-    run-as: www-data
-    on-failure: ABORT
-    commands:
-      # - bash ./scripts/install_dependencies.sh
-      - echo "hello 2"
-    finally:
-      - echo "Installed composer dependencies"
+  # build:
+  #   run-as: www-data
+  #   on-failure: ABORT
+  #   commands:
+  #     # - bash ./scripts/install_dependencies.sh
+  #     - echo "hello 2"
+  #   finally:
+  #     - echo "Installed composer dependencies"
 
 artifacts:
   files:
