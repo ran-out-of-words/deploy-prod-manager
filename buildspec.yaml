@@ -37,7 +37,7 @@ phases:
       - echo "hello"
     finally:
       - echo "Installed system dependencies"
-  pre_build:
+  build:
     run-as: www-data
     on-failure: ABORT
     commands:
