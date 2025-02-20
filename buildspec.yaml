@@ -33,14 +33,16 @@ phases:
     run-as: root
     on-failure: ABORT
     commands:
-      - bash ./scripts/install_system_dependencies.sh
+      # - bash ./scripts/install_system_dependencies.sh
+      - echo "hello"
     finally:
       - echo "Installed system dependencies"
   pre_build:
     run-as: www-data
     on-failure: ABORT
     commands:
-      - bash ./scripts/install_dependencies.sh
+      # - bash ./scripts/install_dependencies.sh
+      - echo "hello 2"
     finally:
       - echo "Installed composer dependencies"
 
