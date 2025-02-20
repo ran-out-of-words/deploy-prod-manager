@@ -1,0 +1,47 @@
+version: 0.2
+
+run-as: www-data
+
+# env:
+#   shell: shell-tag
+#   variables:
+#     key: "value"
+#     key: "value"
+#   parameter-store:
+#     key: "value"
+#     key: "value"
+#   exported-variables:
+#     - variable
+#     - variable
+#   secrets-manager:
+#     key: secret-id:json-key:version-stage:version-id
+#   git-credential-helper: no | yes
+
+# proxy:
+#   upload-artifacts: no | yes
+#   logs: no | yes
+
+batch:
+  fast-fail: false
+  # build-list:
+  # build-matrix:
+  # build-graph:
+  # build-fanout:
+        
+phases:
+  install:
+    run-as: root
+    on-failure: ABORT
+    commands:
+      - bash ./scripts/install_system_dependencies.sh
+    finally:
+      - echo "Installing dependencies..."
+
+artifacts:
+  files:
+    - ./*
+  name: prod-manager-dependencies
+  discard-paths: no
+  base-directory: /
+  enable-symlinks: yes
+  s3-prefix: prod-manager-dependencies
