@@ -45,6 +45,6 @@ artifacts:
   files:
     - '**/*'
   name: prod-manager-builded-$(date +%Y-%m-%d)
-  discard-paths: no
+  discard-paths: yes
   base-directory: /
   enable-symlinks: yes
