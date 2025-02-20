@@ -35,7 +35,7 @@ phases:
     runtime-versions:
       php: 8.3
     commands:
-      - bash ./scripts/install_dependencies.sh
+      - sh ./scripts/install_dependencies.sh
       # - echo "hello"
     finally:
       - echo "Installed system dependencies"
