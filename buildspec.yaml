@@ -35,13 +35,19 @@ phases:
     commands:
       - bash ./scripts/install_system_dependencies.sh
     finally:
-      - echo "Installing dependencies..."
+      - echo "Installed system dependencies"
+  pre_build:
+    run-as: www-data
+    on-failure: ABORT
+    commands:
+      - bash ./scripts/install_dependencies.sh
+    finally:
+      - echo "Installed composer dependencies"
 
 artifacts:
   files:
-    - ./*
-  name: prod-manager-dependencies
+    - '**/*'
+  name: prod-manager-builded-$(date +%Y-%m-%d)
   discard-paths: no
   base-directory: /
   enable-symlinks: yes
-  s3-prefix: prod-manager-dependencies
