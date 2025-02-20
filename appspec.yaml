@@ -1,8 +1,8 @@
 version: 0.1
 os: linux
-files:
-  - source: /
-    destination: /var/www/html
+# files:
+#   - source: /
+#     destination: /var/www/html
   
 hooks:
   ApplicationStop:
